@@ -8,9 +8,10 @@
 <meta name="theme-color" content="#4a5d51">
 <title>Fabiana Baratta | Psicanalista</title>
 
+<!-- ===== GOOGLE FONTS: Lora (títulos) + Inter (corpo) ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -23,8 +24,11 @@
   --ink:#232a26;
   --muted:#6b7269;
   --line:#e2ddd2;
-  --serif:"Cormorant Garamond","Georgia",serif;
+
+  /* ===== FONTES ===== */
+  --serif:"Lora","Georgia",serif;
   --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+
   --max:1200px;
   --radius:18px;
   --radius-lg:32px;
@@ -41,16 +45,24 @@ body{
   color:var(--ink);
   background:var(--bg);
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none;transition:color .3s var(--transition)}
 button{font:inherit;border:0;background:none;cursor:pointer}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:-.01em}
-h1{font-size:clamp(2.4rem,5.5vw,4.6rem);font-weight:300;letter-spacing:-.02em;line-height:1.08}
-h2{font-size:clamp(2rem,4.2vw,3.4rem);font-weight:300}
-h3{font-size:1.5rem;font-weight:400}
-p{color:var(--muted)}
+
+/* ===== TÍTULOS ===== */
+h1,h2,h3,h4{
+  font-family:var(--serif);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+h1{font-size:clamp(2.4rem,5.5vw,4.6rem);font-weight:500;letter-spacing:-.015em;line-height:1.1}
+h2{font-size:clamp(2rem,4.2vw,3.4rem);font-weight:500;line-height:1.2}
+h3{font-size:1.5rem;font-weight:500;line-height:1.3}
+p{color:var(--muted);line-height:1.75}
 em{font-style:italic;color:var(--sage)}
 
 .container{width:min(calc(100% - 44px),var(--max));margin:auto}
@@ -82,8 +94,8 @@ section{padding:120px 0;position:relative}
 }
 .brand{display:flex;flex-direction:column;line-height:1}
 .brand-name{
-  font-family:var(--serif);font-size:1.35rem;font-weight:500;
-  letter-spacing:.14em;color:var(--ink);
+  font-family:var(--serif);font-size:1.35rem;font-weight:600;
+  letter-spacing:.12em;color:var(--ink);
 }
 .brand-sub{
   font-size:.58rem;font-weight:500;letter-spacing:.28em;
@@ -124,9 +136,19 @@ section{padding:120px 0;position:relative}
   gap:80px;align-items:center;
 }
 .hero-text .section-label{margin-bottom:30px}
-.hero h1{margin-bottom:36px;max-width:600px}
+
+/* ✅ H1 DO HERO — Opção B aplicada */
+.hero h1{
+  font-size:clamp(1.8rem,3.2vw,2.8rem);
+  line-height:1.2;
+  letter-spacing:-.015em;
+  margin-bottom:32px;
+  max-width:680px;
+}
+
+/* ✅ HERO-LEAD — reduzido */
 .hero-lead{
-  font-size:1.15rem;line-height:1.7;color:var(--muted);
+  font-size:1.05rem;line-height:1.7;color:var(--muted);
   max-width:520px;margin-bottom:44px;
 }
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
@@ -163,7 +185,7 @@ section{padding:120px 0;position:relative}
   margin-top:40px;padding-top:32px;
   border-top:1px solid var(--line);
   font-family:var(--serif);font-size:1.15rem;
-  font-style:italic;color:var(--sage);
+  font-weight:400;font-style:italic;color:var(--sage);
 }
 
 /* ============ VIVENDO ============ */
@@ -289,7 +311,7 @@ section{padding:120px 0;position:relative}
 .exterior .section-label::before{background:#b8c7bd}
 .exterior-quote{
   font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;line-height:1.25;color:#fff;
+  font-weight:400;line-height:1.3;color:#fff;
   font-style:italic;
 }
 .exterior-text p{color:#e2e8e3;font-size:1.05rem;line-height:1.8}
@@ -309,7 +331,8 @@ summary{
   cursor:pointer;list-style:none;
   padding:28px 0;padding-right:50px;
   font-family:var(--serif);font-size:1.3rem;
-  font-weight:400;color:var(--ink);
+  font-weight:500;color:var(--ink);
+  line-height:1.4;
   position:relative;transition:color .3s;
 }
 summary::-webkit-details-marker{display:none}
@@ -329,7 +352,7 @@ details p{
   line-height:1.75;color:var(--muted);
 }
 
-/* ============ CTA FINAL "UM ESPAÇO PARA COMEÇAR" ============ */
+/* ============ CTA FINAL ============ */
 .cta-final{
   padding:140px 0;text-align:center;
   background:var(--soft);
@@ -344,7 +367,7 @@ details p{
   margin-bottom:44px;
 }
 
-/* ============ CONTATO (agora no final) ============ */
+/* ============ CONTATO ============ */
 .contato{background:var(--paper)}
 .contato-grid{
   display:grid;grid-template-columns:1fr 1fr;
@@ -358,7 +381,6 @@ details p{
   box-shadow:var(--shadow-sm);
 }
 
-/* Linhas de contato — fonte única (Inter) nos dois lados, sem traço */
 .contato-row{
   display:flex;justify-content:space-between;
   align-items:baseline;padding:24px 0;
@@ -402,7 +424,7 @@ details p{
 }
 .footer-brand{
   font-family:var(--serif);font-size:1.25rem;
-  font-weight:500;letter-spacing:.12em;
+  font-weight:600;letter-spacing:.12em;
   color:var(--ink);margin-bottom:14px;
 }
 .footer p{font-size:.85rem;line-height:1.7;color:var(--muted)}
@@ -485,7 +507,11 @@ section, [id]{scroll-margin-top:100px}
     grid-template-columns:1fr;gap:50px;
   }
   .hero-photo{aspect-ratio:3/4;max-width:500px;margin:0 auto}
-  .hero-lead{font-size:1.05rem}
+
+  /* ✅ Ajuste mobile — tablet */
+  .hero h1{font-size:2rem}
+  .hero-lead{font-size:1rem}
+
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn{width:100%;justify-content:center}
 
@@ -521,7 +547,10 @@ section, [id]{scroll-margin-top:100px}
   .brand-name{font-size:1.15rem;letter-spacing:.1em}
   .brand-sub{font-size:.52rem}
   .hero{padding:78px 0 40px}
-  .hero h1{font-size:2.4rem}
+
+  /* ✅ Ajuste mobile — celular */
+  .hero h1{font-size:1.65rem}
+
   .hero-photo{aspect-ratio:4/5}
   .vivendo-list li{font-size:1.1rem;padding:18px 0;gap:14px}
   .vivendo-list li::before{width:16px}
@@ -761,7 +790,7 @@ section, [id]{scroll-margin-top:100px}
   </div>
 </section>
 
-<!-- ============ CTA FINAL "UM ESPAÇO PARA COMEÇAR" ============ -->
+<!-- ============ CTA FINAL ============ -->
 <section class="cta-final" id="comecar">
   <div class="container reveal">
     <div class="section-label" style="justify-content:center">Um espaço para começar</div>
@@ -771,7 +800,7 @@ section, [id]{scroll-margin-top:100px}
   </div>
 </section>
 
-<!-- ============ CONTATO (agora no final) ============ -->
+<!-- ============ CONTATO ============ -->
 <section class="contato" id="contato">
   <div class="container contato-grid">
     <div class="reveal">
@@ -836,7 +865,7 @@ section, [id]{scroll-margin-top:100px}
   </div>
 </footer>
 
-<!-- ============ WHATSAPP FLUTUANTE (ícone oficial) ============ -->
+<!-- ============ WHATSAPP FLUTUANTE ============ -->
 <a class="whatsapp-float" data-wa href="#" aria-label="Falar pelo WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M16.004 3C9.383 3 4 8.383 4 15.004c0 2.348.68 4.535 1.855 6.383L4 29l7.797-1.816A11.94 11.94 0 0 0 16.004 27C22.625 27 28 21.617 28 15.004 28 8.383 22.625 3 16.004 3zm0 21.818a9.79 9.79 0 0 1-4.996-1.367l-.36-.214-4.63 1.078 1.1-4.512-.234-.371a9.79 9.79 0 0 1-1.5-5.213c0-5.42 4.41-9.83 9.83-9.83s9.83 4.41 9.83 9.83c0 5.42-4.41 9.83-9.83 9.83zm5.398-7.36c-.297-.148-1.75-.863-2.02-.961-.27-.1-.467-.148-.664.148-.196.297-.762.961-.934 1.16-.172.196-.344.223-.64.074-.297-.148-1.254-.461-2.391-1.473-.883-.789-1.481-1.762-1.653-2.059-.172-.297-.018-.457.13-.605.13-.13.297-.34.445-.508.148-.172.196-.297.297-.496.098-.196.05-.371-.024-.52-.075-.148-.664-1.6-.91-2.191-.242-.576-.484-.497-.664-.508l-.566-.012c-.196 0-.516.074-.785.371-.27.297-1.031 1.008-1.031 2.457 0 1.45 1.055 2.848 1.203 3.047.148.196 2.078 3.172 5.031 4.449.703.305 1.25.484 1.68.621.707.223 1.352.191 1.86.117.566-.086 1.75-.715 2-1.406.246-.691.246-1.285.172-1.406-.074-.122-.27-.196-.566-.344z"/>
